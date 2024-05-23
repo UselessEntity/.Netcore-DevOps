@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     def dockerfilePath = 'Dockerfile'
-                    def customImage = docker.build("${netcoredevops}:${latest}")
+                    docker.build("${netcoredevops}:${latest}")
                 }
             }
         }
@@ -29,8 +29,7 @@ pipeline {
         stage('Run') {
             steps {
                 script {
-                    def customImage = docker.image("${netcoredevops}:${latest}")
-                    customImage.run("-p 9000:80") // Adjust ports as necessary
+                    docker.image("env.netcoredevops:latest").run("-p 8004:80")
                 }
             }
         }
