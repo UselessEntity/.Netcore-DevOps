@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Checkout from SCM') {
             steps {
-                git branch: "${master}", credentialsId: "${Noob_on_Jenkins}", url: "${https://github.com/bi12-335-usth/.Netcore-DevOps.git}"
+                git branch: "master", credentialsId: "Noob_on_Jenkins", url: "https://github.com/bi12-335-usth/.Netcore-DevOps.git"
                 // When using Jenkinsfile on another server, user needs to clone their repo before doing so that the server could read the codes
             }
         }
