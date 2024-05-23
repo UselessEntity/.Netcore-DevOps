@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script {
                     def customImage = docker.image("${netcoredevops}:${latest}")
-                    customImage.run("-p 8080:8080 -p 50000:50000") // Adjust ports as necessary
+                    customImage.run("-p 9000:80") // Adjust ports as necessary
                 }
             }
         }
