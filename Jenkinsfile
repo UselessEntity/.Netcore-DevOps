@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     def dockerfilePath = 'Dockerfile'
-                    docker.build("env.netcoredevops:latest")
+                    docker.build("netcoredevops:latest")
                 }
             }
         }
@@ -29,7 +29,7 @@ pipeline {
         stage('Run') {
             steps {
                 script {
-                    docker.image("env.netcoredevops:latest").run("-p 9000:80")
+                    docker.image("netcoredevops:latest").run("-p 9000:80")
                 }
             }
         }
