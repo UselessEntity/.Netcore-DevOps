@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     def dockerfilePath = 'Dockerfile'
-                    docker.build("${netcoredevops}:${latest}")
+                    docker.build("env.netcoredevops:latest")
                 }
             }
         }
