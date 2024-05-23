@@ -29,7 +29,7 @@ pipeline {
         stage('Run') {
             steps {
                 script {
-                    docker.image("env.netcoredevops:latest").run("-p 8004:80")
+                    docker.image("env.netcoredevops:latest").run("-p 9000:80")
                 }
             }
         }
